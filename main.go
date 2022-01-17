@@ -2,26 +2,20 @@ package main
 
 import (
 	"fmt"
+	"os"
 
-	"github.com/signintech/pdft"
+	"rsc.io/pdf"
 )
 
 func main() {
-	/*
-		pdf := gofpdf.New("P", "mm", "A4", "")
-		pdf.AddPage()
-		pdf.SetFont("Arial", "B", 16)
-		pdf.Cell(40, 10, "Hello, world")
-		err := pdf.OutputFileAndClose("hello.pdf")
-		if err != nil {
-			fmt.Println(err)
-		}
-	*/
-	var pdf2 pdft.PDFt
-	err := pdf2.Open("hello.pdf")
-	if err != nil {
-		fmt.Println("1", err)
-	}
-	fmt.Printf("%s", pdf2)
 
+	file, err := pdf.Open("f8949.pdf")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	page1 := file.Page(1)
+	val := page1.V.TextFromUTF16()
+
+	fmt.Println(val)
 }
