@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/MarySmirnova/create_pdf/form"
 
@@ -39,12 +39,15 @@ func completeDocument(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 400)
 		return
 	}
-	err = fillpdf.Fill(form, "f8949.pdf", fmt.Sprintf("data/%s.pdf", data.Pages[0].Name))
+	err = fillpdf.Fill(form, "f8949.pdf", "filled.pdf")
 	if err != nil {
 		log.Println(err)
 		return
 	}
-
-	log.Printf("create file %s.pdf", data.Pages[0].Name)
-	w.Write([]byte("filling pdf file completed"))
+	output, _ := os.ReadFile("filled.pdf")
+	log.Println("create file")
+	w.Header().Set("Content-Type", "application/pdf")
+	w.WriteHeader(201)
+	w.Write(output)
+	os.Remove("filled.pdf")
 }
