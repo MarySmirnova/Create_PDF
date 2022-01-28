@@ -1,0 +1,46 @@
+{
+  "name": "Sergei Larionov",
+  "social_number": "347287283",
+  "front": {
+    "irs_reporting": "A",
+    "rows": [
+      {
+        "description": "100.00\nTele Inc (A)",
+        "date_acquired": "2021-02-23T00:00:00Z",
+        "date_sold": "2021-10-23T00:00:00Z",
+        "proceeds": "1500",
+        "cost_basis": "2000",
+        "instruction_code": "w",
+        "adjustment_amount": "500"
+      },
+      {
+        "description": "150.00\nCHINA bum (B)",
+        "date_acquired": "2021-03-23T00:00:00Z",
+        "date_sold": "2021-11-23T00:00:00Z",
+        "proceeds": "3000",
+        "cost_basis": "4000",
+        "instruction_code": "w",
+        "adjustment_amount": "1000"
+      }
+    ]
+  },
+  "back": {
+    "irs_reporting": "B",
+    "rows": [
+      {
+        "description": "2300.00 \nNetu Niche int",
+        "date_acquired": "2020-02-23T00:00:00Z",
+        "date_sold": "2020-10-23T00:00:00Z",
+        "proceeds": "2000",
+        "cost_basis": "2000"
+      },
+      {
+        "description": "150.00\nCHINA bum (B)",
+        "date_acquired": "2021-03-23T00:00:00Z",
+        "date_sold": "2021-11-23T00:00:00Z",
+        "proceeds": "3000",
+        "cost_basis": "4000"
+      }
+    ]
+  }
+}
